@@ -1,11 +1,9 @@
-import Header from "../Components/Header";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 const Home = () => {
   return (
     <main>
-      <Header />
       <Navbar />
       <h1>Home</h1>
       <Footer />
