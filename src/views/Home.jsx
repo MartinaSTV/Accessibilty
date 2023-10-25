@@ -1,11 +1,11 @@
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import Header from "../components/header";
+import Headern from "../Components/Headern";
 
 const Home = () => {
   return (
     <main>
-      <Header />
+      <Headern />
       <Navbar />
       <h1>Home</h1>
       <Footer />
