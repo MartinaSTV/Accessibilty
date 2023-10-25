@@ -7,15 +7,15 @@ import Contact from "./views/Contact";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "Accessibilty/",
       element: <Home />,
     },
     {
-      path: "/About",
+      path: "Accessibilty/About",
       element: <About />,
     },
     {
-      path: "/Contact",
+      path: "Accessibilty/Contact",
       element: <Contact />,
     },
     {
