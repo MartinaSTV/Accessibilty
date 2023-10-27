@@ -1,11 +1,12 @@
 import Form from "../Components/Form";
 import Navbar from "../Components/Navbar";
+import Headern from "../Components/Headern";
 
 const Contact = () => {
   return (
     <article>
+      <Headern />
       <Navbar />
-      <h1>Contact</h1>
       <Form />
     </article>
   );
