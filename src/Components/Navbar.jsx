@@ -6,7 +6,7 @@ const Navbar = () => {
       <a
         href=""
         onClick={() => {
-          navigate("/");
+          navigate("Accessibilty/");
         }}
       >
         Home
@@ -14,7 +14,7 @@ const Navbar = () => {
       <a
         href=""
         onClick={() => {
-          navigate("/About");
+          navigate("Accessibilty/About");
         }}
       >
         About
@@ -22,7 +22,7 @@ const Navbar = () => {
       <a
         href=""
         onClick={() => {
-          navigate("/Contact");
+          navigate("Accessibilty/Contact");
         }}
       >
         Contact
