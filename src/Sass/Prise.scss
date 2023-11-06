@@ -1,0 +1,14 @@
+.prises {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  &__prise {
+    width: 100%;
+    display: flex;
+  }
+  &__priseText {
+  }
+  &__priseP {
+    margin-left: auto;
+  }
+}

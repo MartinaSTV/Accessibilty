@@ -1,23 +1,31 @@
 import Navbar from "../Components/Navbar";
 import Headern from "../Components/Headern";
-import massagevid from "../assets/Massage.mp4";
+import Video from "../Components/video";
+import Footer from "../Components/Footer";
+import "../Sass/About.scss";
+import Prise from "../Components/Prise";
+
 const About = () => {
   return (
-    <article>
+    <article className="about">
       <Headern />
       <Navbar />
-      <h1>About</h1>
-      <section>
-        <h2>Videon visar hur en massage kan gå till</h2>
-        <video
-          width="320"
-          height="240"
-          controls
-          src={massagevid}
-          type="video/mp4"
-          //title=" Massage Video"
-        ></video>
+      <section className="about">
+        <h1>Marie Valinder</h1>
+        <p>
+          My name is Marie and I have worked as a Massage theraphist for 15
+          years. I Have a lot of experience with sports injuries and
+          rehabilitation. I got my degree from Axelssons School in Göteborg were
+          i studied for 2 years and have since then been on numerous courses and
+          classes to add on to my knowledge.
+        </p>
+        <h2>Treatments</h2>
+        <p>I offer 4 different kind of massages. Fullbody Massage, ha</p>
       </section>
+      <Prise />
+
+      <Video />
+      <Footer />
     </article>
   );
 };

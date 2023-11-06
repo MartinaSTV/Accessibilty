@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   max-width: 500px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px grey;
+  padding: 1rem;
+  margin: 0.5rem;
 
   &__form {
     display: flex;

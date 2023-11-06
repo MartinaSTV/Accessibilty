@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+
+  &__link {
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+  }
+  &__link:hover {
+    text-decoration: none;
+    padding: 1rem;
+    font-weight: 600;
+    color: black;
+  }
+}

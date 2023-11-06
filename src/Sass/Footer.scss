@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+
+  &__info {
+    padding: 1rem;
+  }
+
+  &__title {
+    font-size: 0.8rem;
+  }
+}
