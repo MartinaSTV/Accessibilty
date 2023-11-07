@@ -26,5 +26,26 @@
     "prise": "1100",
     "Time": "90 min",
     "info": "En mycket avkopplande massage i flera steg och brukar vara passande för dig som har spänningar i nacke och axlar, har spänningshuvudvärk eller är stressad och behöver varva ner."
+  },
+  {
+    "type": "vax",
+    "treatment": "Vaxning halva ben",
+    "prise": "395",
+    "Time": "30min",
+    "info": "Underben och knän vaxas"
+  },
+  {
+    "type": "vax",
+    "treatment": "Vaxning hela ben",
+    "prise": "780",
+    "Time": "45 min",
+    "info": "Hela benen vaxas, ej bikini"
+  },
+  {
+    "type": "brows",
+    "treatment": "Färg och formning bryn",
+    "prise": "280",
+    "Time": "30 min",
+    "info": ""
   }
 ]

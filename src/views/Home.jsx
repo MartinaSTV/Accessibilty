@@ -3,13 +3,33 @@ import Footer from "../Components/Footer";
 import Headern from "../Components/Headern";
 import "../Sass/Home.scss";
 import info from "../assets/data.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Treatments from "../Components/Treatments";
 
 const Home = () => {
-  const [show, setShow] = useState(false);
+  const [showMassage, setShowMassage] = useState(false);
+  const [showVax, setShowVax] = useState(false);
+  const [showBrows, setShowBrows] = useState(false);
+  const [massages, setMassages] = useState([]);
+  const [brows, setBrows] = useState([]);
+  const [vax, setVax] = useState([]);
 
-  const massage = info.map((info, index) => (
+  useEffect(() => {
+    const Br = info.filter((type) => type.type === "brows");
+    const Ma = info.filter((type) => type.type === "massage");
+    const Va = info.filter((type) => type.type === "vax");
+    setMassages(Ma);
+    setBrows(Br);
+    setVax(Va);
+  }, []);
+
+  const massage = massages.map((info, index) => (
+    <Treatments key={index} info={info} />
+  ));
+  const browes = brows.map((info, index) => (
+    <Treatments key={index} info={info} />
+  ));
+  const vaxing = vax.map((info, index) => (
     <Treatments key={index} info={info} />
   ));
 
@@ -26,7 +46,7 @@ const Home = () => {
             Boka Direkt!
           </a>
         </button>
-        <h1>Massage & skincare</h1>
+        <h1>Massage & hudvård</h1>
         <article className="home__text">
           <p>
             Varför inte stanna upp ett tag och unna dig en välbehövlig massage
@@ -41,15 +61,29 @@ const Home = () => {
           </p>
           <button
             onClick={() => {
-              setShow(!show);
+              setShowMassage(!showMassage);
             }}
           >
-            Read More about Massage
+            {!showMassage ? "Läs mer om massage" : "Stäng stycke om massage"}
           </button>
-          {show ? massage : null}
-          {show ? (
+          <button
+            onClick={() => {
+              setShowVax(!showVax);
+            }}
+          >
+            Läs mer om Vaxning
+          </button>
+          <button
+            onClick={() => {
+              setShowBrows(!showBrows);
+            }}
+          >
+            Läs mer om Bryn
+          </button>
+          {showMassage ? massage : null}
+          {showMassage ? (
             <section>
-              <p className="home__oilsText">Read more about our Oils</p>
+              <p className="home__oilsText">Läs mer om weledas oljor</p>
 
               <button
                 className="home__buttonLink"
@@ -59,8 +93,8 @@ const Home = () => {
               </button>
             </section>
           ) : null}
-          <button>Read more about vax</button>
-          <button>Read more abbout Lasches and brows</button>
+          {showVax ? vaxing : null}
+          {showBrows ? browes : null}
         </article>
       </section>
       <Footer />

@@ -12,15 +12,12 @@ const About = () => {
       <section className="about">
         <h1>Marie Valinder</h1>
         <p>
-          My name is Marie and I have worked as a Massage theraphist for 15
-          years. I Have a lot of experience with sports injuries and
-          rehabilitation. I got my degree from Axelssons School in Göteborg were
-          i studied for 2 years and have since then been on numerous courses and
-          classes to add on to my knowledge. I am a member of
-          kroppsterapeuternas yrkesförbund. Dipl. Cert. Massageterapeut & SPA
-          terapeut aktivt med idrottslag och har stor erfarenhet av
-          idrottsskador.
+          Jag heter Marie Valinder och är Dipl. Cert. Massageterapeut & SPA
+          terapeut. Jag har arbete som massör i 15 år och har under åren har
+          gått på många föreläsningar och fortbildat mig om kroppen. Jag har
+          också arbetat med idrottslag och har stor erfarenhet av idrottsskador.
         </p>
+        <p> Medlem i kroppsterapeuternas yrkesförbund</p>
       </section>
       <Video />
       <Footer />
