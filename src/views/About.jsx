@@ -17,10 +17,9 @@ const About = () => {
           years. I Have a lot of experience with sports injuries and
           rehabilitation. I got my degree from Axelssons School in Göteborg were
           i studied for 2 years and have since then been on numerous courses and
-          classes to add on to my knowledge.
+          classes to add on to my knowledge. I am a member of
+          kroppsterapeuternas yrkesförbund.
         </p>
-        <h2>Treatments</h2>
-        <p>I offer 4 different kind of massages. Fullbody Massage, ha</p>
       </section>
       <Prise />
 
