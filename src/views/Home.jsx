@@ -15,12 +15,12 @@ const Home = () => {
   const [vax, setVax] = useState([]);
 
   useEffect(() => {
-    const Br = info.filter((type) => type.type === "brows");
-    const Ma = info.filter((type) => type.type === "massage");
-    const Va = info.filter((type) => type.type === "vax");
-    setMassages(Ma);
-    setBrows(Br);
-    setVax(Va);
+    const tempBrows = info.filter((type) => type.type === "brows");
+    const tempMassage = info.filter((type) => type.type === "massage");
+    const tempVax = info.filter((type) => type.type === "vax");
+    setMassages(tempMassage);
+    setVax(tempVax);
+    setBrows(tempBrows);
   }, []);
 
   const massage = massages.map((info, index) => (
@@ -38,8 +38,9 @@ const Home = () => {
       <Headern />
       <Navbar />
       <section className="home__section">
-        <button className="home__button">
+        <button className="home__buttonBook">
           <a
+            className="home__buttonBookLink"
             href="https://www.bokadirekt.se/places/lerums-massage-hudvard-49166"
             title="Link to booking paga"
           >
@@ -54,12 +55,15 @@ const Home = () => {
           </p>
           <p>
             Lerums Massage och Hudvård kan erbjuda dig olika typer av
-            behandlingar, utifrån dina egna behov och önskemål. Förutom olika
-            hudvårdsbehandlingar såsom rengöring, färgning av fransar och bryn
-            arbetar jag med vanlig förebyggande massage men även
-            massagebehandlingar vid värk eller stelhet i kroppen.
+            behandlingar, utifrån dina egna behov och önskemål.
+          </p>
+          <p>
+            Förutom olika hudvårdsbehandlingar såsom rengöring, färgning av
+            fransar och bryn arbetar jag med vanlig förebyggande massage men
+            även massagebehandlingar vid värk eller stelhet i kroppen.
           </p>
           <button
+            className="home__buttonInfo"
             onClick={() => {
               setShowMassage(!showMassage);
             }}
@@ -67,6 +71,7 @@ const Home = () => {
             {!showMassage ? "Läs mer om massage" : "Stäng stycke om massage"}
           </button>
           <button
+            className="home__buttonInfo"
             onClick={() => {
               setShowVax(!showVax);
             }}
@@ -74,6 +79,7 @@ const Home = () => {
             Läs mer om Vaxning
           </button>
           <button
+            className="home__buttonInfo"
             onClick={() => {
               setShowBrows(!showBrows);
             }}
@@ -89,7 +95,12 @@ const Home = () => {
                 className="home__buttonLink"
                 title="link to weleda webpage"
               >
-                <a href="https://www.weleda.se/kropp/kroppsolja">Weleda Oils</a>
+                <a
+                  className="home__buttonLinkA"
+                  href="https://www.weleda.se/kropp/kroppsolja"
+                >
+                  Weleda Oils
+                </a>
               </button>
             </section>
           ) : null}

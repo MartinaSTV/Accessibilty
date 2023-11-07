@@ -11,7 +11,7 @@ const Navbar = () => {
           navigate("/");
         }}
       >
-        Home
+        Starsida
       </a>
       <a
         className="navbar__link"
@@ -20,7 +20,7 @@ const Navbar = () => {
           navigate("/About");
         }}
       >
-        About
+        Om
       </a>
       <a
         className="navbar__link"
@@ -29,7 +29,7 @@ const Navbar = () => {
           navigate("/Contact");
         }}
       >
-        Contact
+        Kontakt
       </a>
     </nav>
   );
