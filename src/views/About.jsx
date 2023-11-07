@@ -3,7 +3,6 @@ import Headern from "../Components/Headern";
 import Video from "../Components/video";
 import Footer from "../Components/Footer";
 import "../Sass/About.scss";
-import Prise from "../Components/Prise";
 
 const About = () => {
   return (
@@ -18,11 +17,11 @@ const About = () => {
           rehabilitation. I got my degree from Axelssons School in Göteborg were
           i studied for 2 years and have since then been on numerous courses and
           classes to add on to my knowledge. I am a member of
-          kroppsterapeuternas yrkesförbund.
+          kroppsterapeuternas yrkesförbund. Dipl. Cert. Massageterapeut & SPA
+          terapeut aktivt med idrottslag och har stor erfarenhet av
+          idrottsskador.
         </p>
       </section>
-      <Prise />
-
       <Video />
       <Footer />
     </article>

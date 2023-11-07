@@ -2,9 +2,17 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+
+  &__button {
+    padding: 1rem;
+    max-width: 7rem;
+    align-self: center;
+    margin-bottom: 3rem;
+  }
+  &__button:hover {
+  }
+
   &__section {
-    border-top: 1px solid grey;
-    box-shadow: 1px 1px 1px 1px grey;
     padding: 1rem;
     display: flex;
     flex-direction: column;
