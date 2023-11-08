@@ -1,11 +1,13 @@
 import Navbar from "../Components/Navbar";
 import Headern from "../Components/Headern";
-import Video from "../Components/video";
 import Footer from "../Components/Footer";
 import "../Sass/About.scss";
 import mariePhoto from "../assets/777.jpg";
+import { Fragment } from "react";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
 
 const About = () => {
+  const breadcrumbs = useBreadcrumbs();
   return (
     <article className="about">
       <Headern />
@@ -28,6 +30,19 @@ const About = () => {
           alt="Personfoto Marie Valinder"
         />
       </section>
+      <section className="about__fragment">
+        <Fragment>
+          {breadcrumbs.map(({ breadcrumb }, idx) => {
+            return (
+              <p className="about__page" key={idx}>
+                {breadcrumb}
+              </p>
+            );
+          })}
+        </Fragment>
+      </section>
+
+      <Footer />
       <Footer />
     </article>
   );

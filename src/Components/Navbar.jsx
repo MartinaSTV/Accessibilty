@@ -11,7 +11,7 @@ const Navbar = () => {
           navigate("/");
         }}
       >
-        Starsida
+        Hem
       </a>
       <a
         className="navbar__link"

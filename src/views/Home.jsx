@@ -6,6 +6,8 @@ import info from "../assets/data.json";
 import { useEffect, useState } from "react";
 import Treatments from "../Components/Treatments";
 import Video from "../Components/video";
+import { Fragment } from "react";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
 
 const Home = () => {
   const [showMassage, setShowMassage] = useState(false);
@@ -14,6 +16,8 @@ const Home = () => {
   const [massages, setMassages] = useState([]);
   const [brows, setBrows] = useState([]);
   const [vax, setVax] = useState([]);
+
+  const breadcrumbs = useBreadcrumbs();
 
   useEffect(() => {
     const tempBrows = info.filter((type) => type.type === "brows");
@@ -50,10 +54,10 @@ const Home = () => {
         </button>
         <h1>Massage & hudvård</h1>
         <article className="home__text">
-          <p>
+          <h2>
             Varför inte stanna upp ett tag och unna dig en välbehövlig massage
             eller hudvårdsbehandling?
-          </p>
+          </h2>
           <p>
             Lerums Massage och Hudvård kan erbjuda dig olika typer av
             behandlingar, utifrån dina egna behov och önskemål.
@@ -67,6 +71,8 @@ const Home = () => {
             className="home__buttonInfo"
             onClick={() => {
               setShowMassage(!showMassage);
+              setShowVax(false);
+              setShowBrows(false);
             }}
           >
             {!showMassage ? "Läs mer om massage" : "Stäng stycke om massage"}
@@ -75,6 +81,8 @@ const Home = () => {
             className="home__buttonInfo"
             onClick={() => {
               setShowVax(!showVax);
+              setShowBrows(false);
+              setShowMassage(false);
             }}
           >
             Läs mer om Vaxning
@@ -83,6 +91,8 @@ const Home = () => {
             className="home__buttonInfo"
             onClick={() => {
               setShowBrows(!showBrows);
+              setShowMassage(false);
+              setShowVax(false);
             }}
           >
             Läs mer om Bryn
@@ -110,6 +120,7 @@ const Home = () => {
         </article>
       </section>
       <Video />
+      <Fragment>{breadcrumbs.map(({ breadcrumb }) => breadcrumb)}</Fragment>
       <Footer />
     </main>
   );

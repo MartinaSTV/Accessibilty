@@ -2,7 +2,6 @@
 @import "./mixins";
 
 .about {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   @include view;
@@ -22,6 +21,13 @@
     max-width: 15rem;
     align-self: center;
     margin: 1rem;
+  }
+  &__fragment {
+    align-self: center;
+    display: flex;
+  }
+  &__page {
+    padding-right: 5px;
   }
 }
 

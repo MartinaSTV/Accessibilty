@@ -1,6 +1,7 @@
+import "../Sass/Treatments.scss";
 const Treatments = ({ info }) => {
   return (
-    <article>
+    <article className="treatments">
       <h2>{info.treatment}</h2>
       <p>Tid: {info.Time}</p>
       <p> Pris: {info.prise}</p>
