@@ -8,6 +8,7 @@ import Treatments from "../Components/Treatments";
 import Video from "../Components/video";
 import { Fragment } from "react";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumb from "../Components/Breadcrumbs";
 
 const Home = () => {
   const [showMassage, setShowMassage] = useState(false);
@@ -120,7 +121,9 @@ const Home = () => {
         </article>
       </section>
       <Video />
-      <Fragment>{breadcrumbs.map(({ breadcrumb }) => breadcrumb)}</Fragment>
+      <Fragment>
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+      </Fragment>
       <Footer />
     </main>
   );

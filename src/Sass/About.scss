@@ -22,13 +22,6 @@
     align-self: center;
     margin: 1rem;
   }
-  &__fragment {
-    align-self: center;
-    display: flex;
-  }
-  &__page {
-    padding-right: 5px;
-  }
 }
 
 @media only screen and (max-width: 700px) {

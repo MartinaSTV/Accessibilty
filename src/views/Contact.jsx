@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 import "../Sass/Contact.scss";
 import { Fragment } from "react";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
-
+import Breadcrumb from "../Components/Breadcrumbs";
 const Contact = () => {
   const breadcrumbs = useBreadcrumbs();
   return (
@@ -13,7 +13,9 @@ const Contact = () => {
       <Headern />
       <Navbar />
       <ContactForm />
-      <Fragment>{breadcrumbs.map(({ breadcrumb }) => breadcrumb)}</Fragment>
+      <Fragment>
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+      </Fragment>
       <Footer />
     </article>
   );

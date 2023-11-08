@@ -1,0 +1,9 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__page {
+    margin-left: 0.4rem;
+  }
+}
