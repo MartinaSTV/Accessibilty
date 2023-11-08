@@ -1,0 +1,46 @@
+@import "./_variables";
+@import "./mixins";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  @include view;
+
+  &__section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__person {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+  }
+  &__photo {
+    max-width: 15rem;
+    align-self: center;
+    margin: 1rem;
+  }
+  &__fragment {
+    align-self: center;
+    display: flex;
+  }
+  &__page {
+    padding-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .about__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about__person {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+}

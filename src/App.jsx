@@ -3,24 +3,28 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./views/Home";
 import About from "./views/About";
 import Contact from "./views/Contact";
+import Error from "./views/Error";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "Accessibilty/",
+      path: "/",
       element: <Home />,
+      errorElement: <Error />,
     },
     {
-      path: "Accessibilty/About",
+      path: "/About",
       element: <About />,
+      errorElement: <Error />,
     },
     {
-      path: "Accessibilty/Contact",
+      path: "/Contact",
       element: <Contact />,
+      errorElement: <Error />,
     },
     {
       path: "*",
-      element: <Home />,
+      element: <Error />,
     },
   ]);
   return (

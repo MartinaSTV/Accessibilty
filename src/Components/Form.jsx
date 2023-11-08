@@ -1,19 +1,20 @@
 import { useState } from "react";
 import "../Sass/Form.scss";
 import * as formData from "form-data";
-//import * as Mailgun from "mailgun.js";
-//const Mailgun = require("mailgun.js");
+import { NULL } from "sass";
+//import { Mailgun } from "mailgun.js";
+//import Mailgun from "mailgun.js";
 
-const Form = () => {
+const ContactForm = () => {
   const [name, setMessage] = useState("");
   const [number, setNumber] = useState(0);
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState("");
 
   const API_KEY = import.meta.env.API_KEY;
   const DOMAIN = import.meta.env.DOMAIN;
 
   const mailgun = async () => {
-    /*   const mailgun = new Mailgun(formData);
+    /* const mailgun = new Mailgun(formData);
     const client = mailgun.client({
       username: "https://api.eu.mailgun.net",
       key: API_KEY,
@@ -23,7 +24,7 @@ const Form = () => {
       from: "Excited User <me@samples.mailgun.org>",
       to: "foldermate@hotmail.com",
       subject: "Hello",
-      text: message,
+      text: name,
     };
 
     client.messages
@@ -49,6 +50,7 @@ const Form = () => {
       >
         <label htmlFor="Name">Name</label>
         <input
+          autoComplete="given-name"
           required
           value={name}
           id="Name"
@@ -82,6 +84,7 @@ const Form = () => {
           className="form__input"
           placeholder="email"
           id="EmailAdress"
+          autoComplete="email"
         />
 
         <button type="submit" onClick={mailgun} className="form__button">
@@ -91,4 +94,4 @@ const Form = () => {
     </section>
   );
 };
-export default Form;
+export default ContactForm;

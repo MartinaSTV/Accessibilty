@@ -1,0 +1,13 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.error__cat {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}

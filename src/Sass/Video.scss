@@ -1,0 +1,13 @@
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  &__video {
+    max-width: 100%;
+    height: auto;
+  }
+}
