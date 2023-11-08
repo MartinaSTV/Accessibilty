@@ -1,6 +1,9 @@
 import "../Sass/Breadcrumbs.scss";
+import { useNavigate } from "react-router-dom";
 
 const Breadcrumb = ({ breadcrumbs }) => {
+  const navigate = useNavigate();
+
   return (
     <article className="breadcrumb">
       <p>Sidor: </p>
@@ -15,7 +18,14 @@ const Breadcrumb = ({ breadcrumbs }) => {
         if (breadcrumb.props.children === "Home") {
           return (
             <p className="breadcrumb__page" key={idx}>
-              Hem
+              <a
+                href=""
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Hem
+              </a>
             </p>
           );
         }
