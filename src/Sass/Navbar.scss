@@ -1,7 +1,9 @@
+@import "./_variables";
+@import "./mixins";
+
 .navbar {
   display: flex;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+  background-color: $backround;
 
   &__link {
     text-decoration: none;

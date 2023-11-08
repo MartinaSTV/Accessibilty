@@ -1,7 +1,11 @@
+@import "./_variables";
+@import "./mixins";
+
 .about {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  @include view;
 
   &__section {
     display: flex;

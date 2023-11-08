@@ -5,6 +5,7 @@ import "../Sass/Home.scss";
 import info from "../assets/data.json";
 import { useEffect, useState } from "react";
 import Treatments from "../Components/Treatments";
+import Video from "../Components/video";
 
 const Home = () => {
   const [showMassage, setShowMassage] = useState(false);
@@ -108,6 +109,7 @@ const Home = () => {
           {showBrows ? browes : null}
         </article>
       </section>
+      <Video />
       <Footer />
     </main>
   );

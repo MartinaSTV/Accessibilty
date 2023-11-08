@@ -1,16 +1,23 @@
+@import "./_variables";
+@import "./mixins";
+
 .home {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
+  @include view;
 
   &__buttonBook {
     padding: 1rem;
-    max-width: 8rem;
+    max-width: 11rem;
     align-self: center;
     margin-bottom: 3rem;
+    background: $buttonLink;
+    font-size: 1.3rem;
+    @include font;
+    @include button;
   }
   &__buttonBookLink {
-    text-decoration: none;
+    @include nav;
   }
 
   &__buttonBook:hover {
@@ -20,6 +27,8 @@
     padding: 0.5rem;
     margin-right: 1.5rem;
     margin-top: 1rem;
+    background-color: $buttonInfo;
+    @include button;
   }
   &__buttonInfo:hover {
     font-weight: 600;
@@ -29,6 +38,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    line-height: 150%;
   }
   &__oils {
     display: flex;
@@ -37,12 +47,15 @@
   }
   &__buttonLink {
     margin-left: 0.5rem;
-    max-width: 6rem;
-    max-height: 2rem;
+    background-color: $buttonInfo;
+    max-width: 7rem;
+    max-height: 3rem;
     padding: 0.5rem;
+    @include nav;
+    @include button;
   }
   &__buttonLinkA {
-    text-decoration: none;
+    @include nav;
   }
   &__buttonLink:hover {
     font-weight: 600;

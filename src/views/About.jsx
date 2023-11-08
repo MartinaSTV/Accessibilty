@@ -28,7 +28,6 @@ const About = () => {
           alt="Personfoto Marie Valinder"
         />
       </section>
-      <Video />
       <Footer />
     </article>
   );

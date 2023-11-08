@@ -1,9 +1,11 @@
+@import "./_variables";
 @import url("https://fonts.googleapis.com/css2?family=Asul&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Quicksand:wght@300;500&display=swap");
 #root {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
+  background-color: $backround;
 }
 body {
   margin: 0;
