@@ -56,8 +56,7 @@ const Home = () => {
         <h1>Massage & hudvård</h1>
         <article className="home__text">
           <h2>
-            Varför inte stanna upp ett tag och unna dig en välbehövlig massage
-            eller hudvårdsbehandling?
+            Varför inte stanna upp ett tag och unna dig en välbehövlig Massage.
           </h2>
           <p>
             Lerums Massage och Hudvård kan erbjuda dig olika typer av

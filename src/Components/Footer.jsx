@@ -38,13 +38,16 @@ const Footer = () => {
             </p>
           </article>
         </section>
-      </article>{" "}
+      </article>
       <article className="footer__bottom">
-        <img
-          className="footer__iconFB"
-          src={fbLogo}
-          alt="image of Facebook logo"
-        />
+        <p className="footer__bottomText">Följ mig på facebook</p>
+        <a href="https://www.facebook.com/profile.php?id=100033793636629">
+          <img
+            className="footer__iconFB"
+            src={fbLogo}
+            alt="image of Facebook logo"
+          />
+        </a>
       </article>
     </section>
   );

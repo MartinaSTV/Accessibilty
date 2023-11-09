@@ -38,11 +38,15 @@
   &__bottom {
     background-color: rgb(31, 28, 28);
     display: flex;
+    align-items: center;
+  }
+  &__bottomText {
+    color: white;
+    font-size: 0.7rem;
+    margin-left: auto;
   }
   &__iconFB {
     width: 2rem;
-    margin-left: auto;
-    margin-right: 1rem;
     padding: 1rem;
   }
 }
