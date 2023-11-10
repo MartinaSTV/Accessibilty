@@ -7,9 +7,19 @@
     font-family: "Asul", serif;
     font-size: 2rem;
   }
+  &__navburger {
+    display: none;
+  }
 }
 @media only screen and (max-width: 700px) {
-  .hader__title {
-    font-size: 1rem;
+  .header {
+    display: flex;
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__navburger {
+      display: block;
+      padding: 0.5rem;
+    }
   }
 }

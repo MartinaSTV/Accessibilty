@@ -1,0 +1,13 @@
+.alTreatments {
+  &__Info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .alTreatments__Info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

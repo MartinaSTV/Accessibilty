@@ -1,14 +1,23 @@
 import { useState } from "react";
 import "../Sass/Form.scss";
 import * as formData from "form-data";
-import { NULL } from "sass";
+import { useBeforeunload } from "react-beforeunload";
+
 //import { Mailgun } from "mailgun.js";
 //import Mailgun from "mailgun.js";
 
 const ContactForm = () => {
   const [name, setMessage] = useState("");
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
+  const [textMessage, setTextMessage] = useState("");
+
+  useBeforeunload(name !== "" ? (event) => event.preventDefault() : null);
+  useBeforeunload(number !== "" ? (event) => event.preventDefault() : null);
+  useBeforeunload(email !== "" ? (event) => event.preventDefault() : null);
+  useBeforeunload(
+    textMessage !== "" ? (event) => event.preventDefault() : null
+  );
 
   const API_KEY = import.meta.env.API_KEY;
   const DOMAIN = import.meta.env.DOMAIN;
@@ -35,7 +44,7 @@ const ContactForm = () => {
       .catch((err) => {
         console.error(err);
       }); */
-    console.log(name, number, email);
+    console.log(name, number, email, textMessage);
   };
 
   return (
@@ -85,6 +94,18 @@ const ContactForm = () => {
           placeholder="email"
           id="EmailAdress"
           autoComplete="email"
+        />
+        <label htmlFor="textMessage">Medelande</label>
+        <input
+          className="form__input"
+          value={textMessage}
+          type="text"
+          id="textMessage"
+          placeholder="Text Meddelande"
+          required
+          onChange={(e) => {
+            setTextMessage(e.target.value);
+          }}
         />
 
         <button type="submit" onClick={mailgun} className="form__button">

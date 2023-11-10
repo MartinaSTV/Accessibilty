@@ -24,7 +24,7 @@ const Breadcrumb = ({ breadcrumbs }) => {
                   navigate("/");
                 }}
               >
-                Hem
+                Hem /
               </a>
             </p>
           );

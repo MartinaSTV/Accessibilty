@@ -42,10 +42,59 @@
     "info": "Hela benen vaxas, ej bikini"
   },
   {
+    "type": "vax",
+    "treatment": "Vaxning halva ben",
+    "prise": "395",
+    "Time": "30min",
+    "info": "Underben och knän vaxas"
+  },
+  {
+    "type": "vax",
+    "treatment": "Bikinivaxning",
+    "prise": "280",
+    "Time": "15 min",
+    "info": "Bikinivaxning med vax för känslig hud"
+  },
+  {
+    "type": "vax",
+    "treatment": "Armhålor",
+    "prise": "250",
+    "Time": "15 min",
+    "info": ""
+  },
+  {
+    "type": "vax",
+    "treatment": "Rygg",
+    "prise": "500",
+    "Time": "30 min",
+    "info": ""
+  },
+  {
+    "type": "vax",
+    "treatment": "Armar",
+    "prise": "350",
+    "Time": "30 min",
+    "info": ""
+  },
+  {
     "type": "brows",
     "treatment": "Färg och formning bryn",
     "prise": "280",
     "Time": "30 min",
     "info": ""
+  },
+  {
+    "type": "brows",
+    "treatment": "Fransfärgning",
+    "prise": "230",
+    "Time": "15 min",
+    "info": "Det är bra om du har tagit bort mascaran innan besöket. Färgen på fransarna sitter längre om du har rena och torra ögonfransar innan färgningen."
+  },
+  {
+    "type": "brows",
+    "treatment": "Färg frans och bryn",
+    "prise": "480",
+    "Time": "30 min",
+    "info": "Det är bra om du har tagit bort mascaran innan besöket. Färgen på fransarna sitter längre om du har rena och torra ögonfransar innan färgningen."
   }
 ]
