@@ -11,6 +11,7 @@ const ContactForm = () => {
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [textMessage, setTextMessage] = useState("");
+  const [showSentForm, setShowSentForm] = useState(false);
 
   useBeforeunload(name !== "" ? (event) => event.preventDefault() : null);
   useBeforeunload(number !== "" ? (event) => event.preventDefault() : null);
@@ -44,7 +45,13 @@ const ContactForm = () => {
       .catch((err) => {
         console.error(err);
       }); */
+
     console.log(name, number, email, textMessage);
+    if (name === "" || number === "" || email === "" || textMessage === "") {
+      null;
+    } else {
+      setShowSentForm(true);
+    }
   };
 
   return (
@@ -112,6 +119,19 @@ const ContactForm = () => {
           Submit
         </button>
       </form>
+      {showSentForm ? (
+        <article className="form__sent">
+          <p>Medelande skickat</p>
+          <button
+            className="form__sentButton"
+            onClick={() => {
+              setShowSentForm(false);
+            }}
+          >
+            Okej
+          </button>
+        </article>
+      ) : null}
     </section>
   );
 };
