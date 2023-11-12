@@ -8,6 +8,7 @@
   padding: 1rem;
   margin: 0.5rem;
   position: relative;
+  font-size: 1rem;
 
   &__form {
     display: flex;
@@ -27,7 +28,7 @@
     @include button;
     background-color: $buttonLink;
     width: 100%;
-    font-size: 3.75rem;
+    font-size: 1.4rem;
   }
   &__sent {
     right: 50%;

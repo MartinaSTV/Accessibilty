@@ -8,7 +8,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  font-size: 0.7rem;
+  font-size: 1rem;
   background-color: $footer;
   color: white;
   @include font;
@@ -42,11 +42,11 @@
   }
   &__bottomText {
     color: white;
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-left: auto;
   }
   &__iconFB {
-    width: 2rem;
+    width: 2.5rem;
     padding: 1rem;
   }
 }

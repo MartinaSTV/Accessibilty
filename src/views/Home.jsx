@@ -37,11 +37,13 @@ const Home = () => {
             Lerums Massage och Hudvård kan erbjuda dig olika typer av
             behandlingar, utifrån dina egna behov och önskemål.
           </p>
-          <p>
-            Förutom olika hudvårdsbehandlingar såsom rengöring, färgning av
-            fransar och bryn arbetar jag med vanlig förebyggande massage men
-            även massagebehandlingar vid värk eller stelhet i kroppen.
-          </p>
+          <ul>
+            <li>Färgning bryn och Fransar</li>
+            <li>Massage och massage vid värk och stelhet</li>
+            <li>Vaxning</li>
+            <li>Hudvårdsbehandlingar</li>
+          </ul>
+
           <AllTreatments />
         </article>
       </section>

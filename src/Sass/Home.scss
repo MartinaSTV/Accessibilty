@@ -3,12 +3,16 @@
 
 .home {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   @include view;
 
   &__buttonBook {
+    font-size: 1.5rem;
     padding: 1rem;
     max-width: 11rem;
+    min-width: 3.75rem;
+    min-height: 3.75rem;
     align-self: center;
     margin-bottom: 3rem;
     background: $buttonLink;
@@ -24,13 +28,15 @@
     font-weight: 600;
   }
   &__buttonInfo {
+    min-width: 3.75rem;
+    min-height: 3.75rem;
     padding: 0.5rem;
     margin-right: 1.5rem;
     margin-top: 1rem;
     background-color: $buttonInfo;
     @include button;
     @include font;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   &__buttonInfo:hover {
     font-weight: 600;
@@ -55,6 +61,8 @@
     align-items: center;
     max-width: 7rem;
     max-height: 3rem;
+    min-width: 3.75rem;
+    min-height: 3.75rem;
     padding: 0.5rem;
     @include nav;
     @include button;
@@ -70,6 +78,9 @@
   .home {
     &__navbar {
       display: none;
+    }
+    &__buttonInfo {
+      width: 100%;
     }
   }
 }

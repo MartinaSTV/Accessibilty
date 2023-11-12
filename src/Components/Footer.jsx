@@ -8,12 +8,12 @@ const Footer = () => {
     <section className="footer__whole">
       <article className="footer">
         <section className="footer__info">
-          <h2 className="footer__title">Adress</h2>
+          <h1 className="footer__title">Adress</h1>
           <p className="footer__text">Göteborgsvägen 15C</p>
           <p>44 33 0 Lerum</p>
         </section>
         <section className="footer__info">
-          <h2 className="footer__title">Öppetider</h2>
+          <h1 className="footer__title">Öppetider</h1>
           <p>måndag: 10-18</p>
           <p>Tisdag 9.30-18</p>
           <p>Onsdag: 9.30-18</p>
@@ -21,7 +21,7 @@ const Footer = () => {
           <p>Fredag: 10.30-16</p>
         </section>
         <section className="footer__info">
-          <h2 className="footer__titleContact">Kontakt</h2>
+          <h1 className="footer__titleContact">Kontakt</h1>
           <p className="footer__name">Marie Valinder</p>
           <article className="footer__section">
             <img className="footer__icon" src={phoneIcon} alt="phone image" />
