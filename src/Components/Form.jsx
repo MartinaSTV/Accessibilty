@@ -51,12 +51,16 @@ const ContactForm = () => {
       null;
     } else {
       setShowSentForm(true);
+      setNumber("");
+      setMessage("");
+      setEmail("");
+      setTextMessage("");
     }
   };
 
   return (
     <section className="form">
-      <h2>Contact form</h2>
+      <h2>Kontaktformulär</h2>
       <form
         className="form__form"
         action=""
@@ -64,7 +68,7 @@ const ContactForm = () => {
           e.preventDefault();
         }}
       >
-        <label htmlFor="Name">Name</label>
+        <label htmlFor="Name">Namn</label>
         <input
           autoComplete="given-name"
           required
@@ -77,14 +81,14 @@ const ContactForm = () => {
             setMessage(e.target.value);
           }}
         />
-        <label htmlFor="TelephoneNumber">Telephone number</label>
+        <label htmlFor="TelephoneNumber">Telefon nummer</label>
         <input
           required
           value={number}
           id="TelephoneNumber"
           className="form__input"
           type="number"
-          placeholder="Telephone number"
+          placeholder="Telefon nummer"
           onChange={(e) => {
             setNumber(e.target.value);
           }}
@@ -98,7 +102,7 @@ const ContactForm = () => {
           type="email"
           value={email}
           className="form__input"
-          placeholder="email"
+          placeholder="E-mail"
           id="EmailAdress"
           autoComplete="email"
         />
@@ -116,7 +120,7 @@ const ContactForm = () => {
         />
 
         <button type="submit" onClick={mailgun} className="form__button">
-          Submit
+          Skicka
         </button>
       </form>
       {showSentForm ? (

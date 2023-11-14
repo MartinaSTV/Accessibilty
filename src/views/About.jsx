@@ -10,7 +10,7 @@ import Breadcrumb from "../Components/Breadcrumbs";
 const About = () => {
   const breadcrumbs = useBreadcrumbs();
   return (
-    <article className="about">
+    <main className="about">
       <Headern />
       <Navbar />
       <section className="about__section">
@@ -37,7 +37,7 @@ const About = () => {
         </Fragment>
       </section>
       <Footer />
-    </article>
+    </main>
   );
 };
 export default About;

@@ -12,7 +12,7 @@ import mailIcon from "../assets/mail.svg";
 const Contact = () => {
   const breadcrumbs = useBreadcrumbs();
   return (
-    <article className="contact">
+    <main className="contact">
       <Headern />
       <Navbar />
       <section className="contact__info">
@@ -47,7 +47,7 @@ const Contact = () => {
         <Breadcrumb breadcrumbs={breadcrumbs} />
       </Fragment>
       <Footer />
-    </article>
+    </main>
   );
 };
 export default Contact;

@@ -3,7 +3,6 @@
 
 .home {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   @include view;
 
@@ -19,6 +18,12 @@
     font-size: 1.3rem;
     @include font;
     @include button;
+    background: rgb(234, 198, 200);
+    background: radial-gradient(
+      circle,
+      rgba(234, 198, 200, 1) 0%,
+      rgba(224, 109, 113, 0.9248937612154237) 100%
+    );
   }
   &__buttonBookLink {
     @include nav;
@@ -36,7 +41,14 @@
     background-color: $buttonInfo;
     @include button;
     @include font;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    background: rgb(228, 147, 150);
+    background: linear-gradient(
+      90deg,
+      rgba(228, 147, 150, 1) 0%,
+      rgba(233, 174, 176, 1) 51%,
+      rgba(228, 155, 158, 1) 100%
+    );
   }
   &__buttonInfo:hover {
     font-weight: 600;
@@ -47,6 +59,8 @@
     display: flex;
     flex-direction: column;
     line-height: 150%;
+    width: 100%;
+    box-sizing: border-box;
   }
   &__oils {
     display: flex;
@@ -72,6 +86,9 @@
   }
   &__buttonLink:hover {
     font-weight: 600;
+  }
+  &__text {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 700px) {

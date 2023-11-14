@@ -5,7 +5,7 @@ import fbLogo from "../assets/fb.svg";
 
 const Footer = () => {
   return (
-    <section className="footer__whole">
+    <footer className="footer__whole">
       <article className="footer">
         <section className="footer__info">
           <h1 className="footer__title">Adress</h1>
@@ -49,7 +49,7 @@ const Footer = () => {
           />
         </a>
       </article>
-    </section>
+    </footer>
   );
 };
 export default Footer;
