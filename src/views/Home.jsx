@@ -1,4 +1,5 @@
 import Navbar from "../Components/Navbar";
+import NavBurger from "../Components/NavBurger";
 import Footer from "../Components/Footer";
 import Headern from "../Components/Headern";
 import "../Sass/Home.scss";
@@ -7,7 +8,6 @@ import { Fragment } from "react";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import Breadcrumb from "../Components/Breadcrumbs";
 import AllTreatments from "../Components/AllTreatments";
-import NavBurger from "../Components/NavBurger";
 
 const Home = () => {
   const breadcrumbs = useBreadcrumbs();
@@ -19,15 +19,6 @@ const Home = () => {
         <Navbar />
       </section>
       <section className="home__section">
-        <button className="home__buttonBook">
-          <a
-            className="home__buttonBookLink"
-            href="https://www.bokadirekt.se/places/lerums-massage-hudvard-49166"
-            title="Link to booking paga"
-          >
-            Boka Direkt!
-          </a>
-        </button>
         <h1>Massage & hudvård</h1>
         <article className="home__text">
           <h2>
@@ -43,7 +34,6 @@ const Home = () => {
             <li>Vaxning</li>
             <li>Hudvårdsbehandlingar</li>
           </ul>
-
           <AllTreatments />
         </article>
       </section>
@@ -51,7 +41,12 @@ const Home = () => {
       <Fragment>
         <Breadcrumb breadcrumbs={breadcrumbs} />
       </Fragment>
-      <Footer />
+      <section className="home__navburger">
+        <NavBurger />
+      </section>
+      <section className="home__footer">
+        <Footer />
+      </section>
     </main>
   );
 };

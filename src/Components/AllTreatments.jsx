@@ -42,7 +42,9 @@ const AllTreatments = () => {
           setShowBrows(false);
         }}
       >
-        {!showMassage ? "Läs mer om massage" : "Stäng stycke om massage"}
+        {!showMassage
+          ? "Läs mer om mina olika massager"
+          : "Stäng stycke om massage"}
       </button>
       <button
         aria-label="Läs mer buttons"

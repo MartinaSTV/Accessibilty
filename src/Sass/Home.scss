@@ -6,32 +6,6 @@
   flex-direction: column;
   @include view;
 
-  &__buttonBook {
-    font-size: 1.5rem;
-    padding: 1rem;
-    max-width: 11rem;
-    min-width: 3.75rem;
-    min-height: 3.75rem;
-    align-self: center;
-    margin-bottom: 3rem;
-    background: $buttonLink;
-    font-size: 1.3rem;
-    @include font;
-    @include button;
-    background: rgb(234, 198, 200);
-    background: radial-gradient(
-      circle,
-      rgba(234, 198, 200, 1) 0%,
-      rgba(224, 109, 113, 0.9248937612154237) 100%
-    );
-  }
-  &__buttonBookLink {
-    @include nav;
-  }
-
-  &__buttonBook:hover {
-    font-weight: 600;
-  }
   &__buttonInfo {
     min-width: 3.75rem;
     min-height: 3.75rem;
@@ -90,11 +64,27 @@
   &__text {
     width: 100%;
   }
+  &__navburger {
+    display: none;
+  }
 }
 @media only screen and (max-width: 700px) {
   .home {
+    position: relative;
+    padding-bottom: 3rem;
+
     &__navbar {
       display: none;
+    }
+    &__footer {
+      display: none;
+    }
+
+    &__navburger {
+      position: fixed;
+      bottom: 0;
+      display: block;
+      width: 100%;
     }
     &__buttonInfo {
       width: 100%;

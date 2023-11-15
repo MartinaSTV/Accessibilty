@@ -32,6 +32,14 @@ const Navbar = () => {
       >
         Kontakt
       </a>
+
+      <a
+        className="navbar__buttonBookLink"
+        href="https://www.bokadirekt.se/places/lerums-massage-hudvard-49166"
+        title="Link to booking paga"
+      >
+        Boka Direkt!
+      </a>
     </nav>
   );
 };
