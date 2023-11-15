@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../Sass/Form.scss";
 import * as formData from "form-data";
 import { useBeforeunload } from "react-beforeunload";
@@ -12,6 +12,8 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [textMessage, setTextMessage] = useState("");
   const [showSentForm, setShowSentForm] = useState(false);
+  const [formHasChange, setFormHasChange] = useState(false);
+  const [backbuttonWarning, setBackButtonWarning] = useState(false);
 
   useBeforeunload(name !== "" ? (event) => event.preventDefault() : null);
   useBeforeunload(number !== "" ? (event) => event.preventDefault() : null);
@@ -19,6 +21,19 @@ const ContactForm = () => {
   useBeforeunload(
     textMessage !== "" ? (event) => event.preventDefault() : null
   );
+  useBeforeunload();
+
+  useEffect(() => {
+    addEventListener("popstate", (e) => {
+      if (formHasChange === true) {
+        console.log("gå inte tillbaka");
+        e.preventDefault();
+        history.go(1);
+        setBackButtonWarning(true);
+        //e.stopImmediatePropagation()
+      }
+    });
+  }, [formHasChange]);
 
   const API_KEY = import.meta.env.API_KEY;
   const DOMAIN = import.meta.env.DOMAIN;
@@ -62,6 +77,9 @@ const ContactForm = () => {
     <section className="form">
       <h2>Kontaktformulär</h2>
       <form
+        onChange={() => {
+          setFormHasChange(true);
+        }}
         className="form__form"
         action=""
         onSubmit={(e) => {
@@ -134,6 +152,19 @@ const ContactForm = () => {
           >
             Okej
           </button>
+        </article>
+      ) : null}
+      {backbuttonWarning ? (
+        <article>
+          <p>Säkert att du vill byta sida?</p>
+          <button
+            onClick={() => {
+              setBackButtonWarning(false);
+            }}
+          >
+            Ja
+          </button>
+          <button>Nej</button>
         </article>
       ) : null}
     </section>
