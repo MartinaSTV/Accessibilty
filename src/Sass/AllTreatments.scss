@@ -1,4 +1,52 @@
+@import "./_variables";
+@import "./mixins";
+
 .alTreatments {
+  &__buttonInfo {
+    min-width: 3.75rem;
+    min-height: 3.75rem;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    background-color: white;
+
+    @include button;
+    @include font;
+    font-size: 1.1rem;
+    color: black;
+    border: 1px solid $buttonInfo;
+    box-shadow: 1px 0px 0px 0px $buttonInfo;
+    /*    background: rgb(228, 147, 150);
+    background: linear-gradient(
+      90deg,
+      rgba(228, 147, 150, 1) 0%,
+      rgba(233, 174, 176, 1) 51%,
+      rgba(228, 155, 158, 1) 100%
+    ); */
+  }
+  &__buttonInfo:hover {
+    font-weight: 600;
+  }
+
+  &__buttonLink {
+    margin-left: 0.5rem;
+    background-color: $buttonInfo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 7rem;
+    max-height: 3rem;
+    min-width: 3.75rem;
+    min-height: 3.75rem;
+    padding: 0.5rem;
+    @include nav;
+    @include button;
+  }
+  &__buttonLinkA {
+    @include nav;
+  }
+  &__buttonLink:hover {
+    font-weight: 600;
+  }
   &__Info {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -6,9 +54,16 @@
   }
 }
 @media only screen and (max-width: 700px) {
-  .alTreatments__Info {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0.1rem;
+  .alTreatments {
+    &__Info {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.1rem;
+    }
+
+    &__buttonInfo {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 }

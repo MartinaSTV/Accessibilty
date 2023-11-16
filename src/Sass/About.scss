@@ -25,15 +25,31 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .about__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .about__person {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
+  .about {
+    &__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__person {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+    &__navbar {
+      display: none;
+    }
+    &__footer {
+      display: none;
+    }
+
+    &__navburger {
+      position: fixed;
+      bottom: 0;
+      display: block;
+      width: 100%;
+    }
   }
 }

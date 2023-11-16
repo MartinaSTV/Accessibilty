@@ -34,8 +34,7 @@ const AllTreatments = () => {
     <section className="alTreatments">
       <button
         aria-label="Läs mer buttons"
-        role="toolbar"
-        className="home__buttonInfo"
+        className="alTreatments__buttonInfo"
         onClick={() => {
           setShowMassage(!showMassage);
           setShowVax(false);
@@ -48,8 +47,7 @@ const AllTreatments = () => {
       </button>
       <button
         aria-label="Läs mer buttons"
-        role="toolbar"
-        className="home__buttonInfo"
+        className="alTreatments__buttonInfo"
         onClick={() => {
           setShowVax(!showVax);
           setShowBrows(false);
@@ -60,8 +58,7 @@ const AllTreatments = () => {
       </button>
       <button
         aria-label="Läs mer buttons"
-        role="toolbar"
-        className="home__buttonInfo"
+        className="alTreatments__buttonInfo"
         onClick={() => {
           setShowBrows(!showBrows);
           setShowMassage(false);
@@ -75,11 +72,14 @@ const AllTreatments = () => {
       </section>
       {showMassage ? (
         <section>
-          <p className="home__oilsText">Läs mer om weledas oljor</p>
+          <p className="alTreatments__oilsText">Läs mer om weledas oljor</p>
 
-          <button className="home__buttonLink" title="link to weleda webpage">
+          <button
+            className="alTreatments__buttonLink"
+            title="link to weleda webpage"
+          >
             <a
-              className="home__buttonLinkA"
+              className="alTreatments__buttonLinkA"
               href="https://www.weleda.se/kropp/kroppsolja"
             >
               Läs mer om Weleda Oils

@@ -1,4 +1,5 @@
 import Navbar from "../Components/Navbar";
+import NavBurger from "../Components/NavBurger";
 import Headern from "../Components/Headern";
 import Footer from "../Components/Footer";
 import "../Sass/About.scss";
@@ -12,7 +13,9 @@ const About = () => {
   return (
     <main className="about">
       <Headern />
-      <Navbar />
+      <section className="home__navbar">
+        <Navbar />
+      </section>
       <section className="about__section">
         <article className="about__person">
           <h1>Marie Valinder</h1>
@@ -36,7 +39,12 @@ const About = () => {
           <Breadcrumb breadcrumbs={breadcrumbs} />
         </Fragment>
       </section>
-      <Footer />
+      <section className="home__navburger">
+        <NavBurger />
+      </section>
+      <section className="home__footer">
+        <Footer />
+      </section>
     </main>
   );
 };
