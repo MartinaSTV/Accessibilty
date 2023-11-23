@@ -5,11 +5,12 @@ import "../Sass/About.scss";
 import mariePhoto from "../assets/777.jpg";
 import { Fragment } from "react";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumb from "../Components/Breadcrumbs";
 
 const About = () => {
   const breadcrumbs = useBreadcrumbs();
   return (
-    <article className="about">
+    <main className="about">
       <Headern />
       <Navbar />
       <section className="about__section">
@@ -32,19 +33,11 @@ const About = () => {
       </section>
       <section className="about__fragment">
         <Fragment>
-          {breadcrumbs.map(({ breadcrumb }, idx) => {
-            return (
-              <p className="about__page" key={idx}>
-                {breadcrumb}
-              </p>
-            );
-          })}
+          <Breadcrumb breadcrumbs={breadcrumbs} />
         </Fragment>
       </section>
-
       <Footer />
-      <Footer />
-    </article>
+    </main>
   );
 };
 export default About;

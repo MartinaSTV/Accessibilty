@@ -3,7 +3,7 @@
 #root {
   max-width: 1500px;
   margin: 0 auto;
-  min-width: 320px;
+  //min-width: 320px;
   min-height: 100vh;
   background-color: $backround;
 }
@@ -11,6 +11,14 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+h1 {
+  font-weight: 400;
+}
+h2 {
+  font-weight: 300;
 }
 
 //font-family: 'Open Sans', sans-serif;

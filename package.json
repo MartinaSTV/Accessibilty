@@ -12,6 +12,7 @@
   "dependencies": {
     "mailgun.js": "^9.3.0",
     "react": "^18.2.0",
+    "react-beforeunload": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
     "sass": "^1.69.4",

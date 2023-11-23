@@ -1,14 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../Sass/Form.scss";
 import * as formData from "form-data";
-import { NULL } from "sass";
+import { useBeforeunload } from "react-beforeunload";
+
 //import { Mailgun } from "mailgun.js";
 //import Mailgun from "mailgun.js";
 
 const ContactForm = () => {
   const [name, setMessage] = useState("");
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
+  const [textMessage, setTextMessage] = useState("");
+  const [showSentForm, setShowSentForm] = useState(false);
+  const [formHasChange, setFormHasChange] = useState(false);
+  const [backbuttonWarning, setBackButtonWarning] = useState(false);
+
+  useBeforeunload(name !== "" ? (event) => event.preventDefault() : null);
+  useBeforeunload(number !== "" ? (event) => event.preventDefault() : null);
+  useBeforeunload(email !== "" ? (event) => event.preventDefault() : null);
+  useBeforeunload(
+    textMessage !== "" ? (event) => event.preventDefault() : null
+  );
+  useBeforeunload();
+
+  useEffect(() => {
+    addEventListener("popstate", (e) => {
+      if (formHasChange === true) {
+        console.log("gå inte tillbaka");
+        e.preventDefault();
+        history.go(1);
+        setBackButtonWarning(true);
+        //e.stopImmediatePropagation()
+      }
+    });
+  }, [formHasChange]);
 
   const API_KEY = import.meta.env.API_KEY;
   const DOMAIN = import.meta.env.DOMAIN;
@@ -35,20 +60,33 @@ const ContactForm = () => {
       .catch((err) => {
         console.error(err);
       }); */
-    console.log(name, number, email);
+
+    console.log(name, number, email, textMessage);
+    if (name === "" || number === "" || email === "" || textMessage === "") {
+      null;
+    } else {
+      setShowSentForm(true);
+      setNumber("");
+      setMessage("");
+      setEmail("");
+      setTextMessage("");
+    }
   };
 
   return (
     <section className="form">
-      <h2>Contact form</h2>
+      <h2>Kontaktformulär</h2>
       <form
+        onChange={() => {
+          setFormHasChange(true);
+        }}
         className="form__form"
         action=""
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        <label htmlFor="Name">Name</label>
+        <label htmlFor="Name">Namn</label>
         <input
           autoComplete="given-name"
           required
@@ -61,14 +99,14 @@ const ContactForm = () => {
             setMessage(e.target.value);
           }}
         />
-        <label htmlFor="TelephoneNumber">Telephone number</label>
+        <label htmlFor="TelephoneNumber">Telefon nummer</label>
         <input
           required
           value={number}
           id="TelephoneNumber"
           className="form__input"
           type="number"
-          placeholder="Telephone number"
+          placeholder="Telefon nummer"
           onChange={(e) => {
             setNumber(e.target.value);
           }}
@@ -82,15 +120,53 @@ const ContactForm = () => {
           type="email"
           value={email}
           className="form__input"
-          placeholder="email"
+          placeholder="E-mail"
           id="EmailAdress"
           autoComplete="email"
         />
+        <label htmlFor="textMessage">Medelande</label>
+        <input
+          className="form__input"
+          value={textMessage}
+          type="text"
+          id="textMessage"
+          placeholder="Text Meddelande"
+          required
+          onChange={(e) => {
+            setTextMessage(e.target.value);
+          }}
+        />
 
         <button type="submit" onClick={mailgun} className="form__button">
-          Submit
+          Skicka
         </button>
       </form>
+      {showSentForm ? (
+        <article className="form__sent">
+          <p>Medelande skickat</p>
+          <button
+            className="form__sentButton"
+            onClick={() => {
+              setShowSentForm(false);
+            }}
+          >
+            Okej
+          </button>
+        </article>
+      ) : null}
+      {backbuttonWarning ? (
+        <article>
+          <p>Säkert att du vill byta sida?</p>
+          <button
+            onClick={() => {
+              setBackButtonWarning(false);
+            }}
+          >
+            Ja
+          </button>
+          <button>Nej</button>
+        </article>
+      ) : null}
     </section>
   );
 };

@@ -1,15 +1,34 @@
+@import "./_variables";
+@import "./mixins";
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cardo:ital@1&family=Kaushan+Script&display=swap");
 .header {
   display: flex;
   justify-content: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 
   &__title {
-    font-family: "Asul", serif;
     font-size: 2rem;
+    padding-bottom: 3px;
+    font-family: "Cardo", serif;
+    border-bottom: 1px solid grey;
+  }
+  &__navburger {
+    display: none;
+  }
+  &__border {
+    width: 17rem;
   }
 }
 @media only screen and (max-width: 700px) {
-  .hader__title {
-    font-size: 1rem;
+  .header {
+    padding: 0;
+    display: flex;
+    &__title {
+      font-size: 1.5rem;
+    }
   }
 }

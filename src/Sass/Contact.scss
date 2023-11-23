@@ -3,4 +3,14 @@
 
 .contact {
   @include view;
+  &__info {
+    padding: 1rem;
+  }
+  &__section {
+    display: flex;
+  }
+  &__icon {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
