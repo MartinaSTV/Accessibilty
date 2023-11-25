@@ -19,6 +19,7 @@ function App() {
     },
     {
       path: "/Contact",
+      action: { ok: true },
       element: <Contact />,
       errorElement: <Error />,
     },

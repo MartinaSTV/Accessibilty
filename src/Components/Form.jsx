@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import "../Sass/Form.scss";
-import * as formData from "form-data";
 import { useBeforeunload } from "react-beforeunload";
-
-//import { Mailgun } from "mailgun.js";
-//import Mailgun from "mailgun.js";
+import { unstable_useBlocker as useBlocker } from "react-router-dom";
+import { useActionData } from "react-router-dom";
+import { useCallback } from "react";
+import { validNumber, validEmail } from "./RegEx";
+import MyModal from "./MyModal";
+import Modal from "./Modal";
+import { createPortal } from "react-dom";
 
 const ContactForm = () => {
   const [name, setMessage] = useState("");
@@ -13,7 +16,8 @@ const ContactForm = () => {
   const [textMessage, setTextMessage] = useState("");
   const [showSentForm, setShowSentForm] = useState(false);
   const [formHasChange, setFormHasChange] = useState(false);
-  const [backbuttonWarning, setBackButtonWarning] = useState(false);
+  const [emailErr, setEmailErr] = useState(false);
+  const [numberErr, setNumberErr] = useState(false);
 
   useBeforeunload(name !== "" ? (event) => event.preventDefault() : null);
   useBeforeunload(number !== "" ? (event) => event.preventDefault() : null);
@@ -23,43 +27,39 @@ const ContactForm = () => {
   );
   useBeforeunload();
 
+  let actionData = useActionData();
+  let shouldBlock = useCallback(
+    ({ currentLocation, nextLocation }) =>
+      formHasChange !== false &&
+      currentLocation.pathname !== nextLocation.pathname,
+    [formHasChange]
+  );
+  let blocker = useBlocker(shouldBlock);
   useEffect(() => {
-    addEventListener("popstate", (e) => {
-      if (formHasChange === true) {
-        console.log("gå inte tillbaka");
-        e.preventDefault();
-        history.go(1);
-        setBackButtonWarning(true);
-        //e.stopImmediatePropagation()
-      }
-    });
-  }, [formHasChange]);
+    if (actionData?.ok) {
+      setFormHasChange(false);
+    }
+  }, [actionData]);
 
-  const API_KEY = import.meta.env.API_KEY;
-  const DOMAIN = import.meta.env.DOMAIN;
+  useEffect(() => {
+    if (blocker.state === "blocked" && formHasChange === false) {
+      blocker.reset();
+    }
+  }, [blocker, formHasChange]);
 
-  const mailgun = async () => {
-    /* const mailgun = new Mailgun(formData);
-    const client = mailgun.client({
-      username: "https://api.eu.mailgun.net",
-      key: API_KEY,
-    });
-
-    const messageData = {
-      from: "Excited User <me@samples.mailgun.org>",
-      to: "foldermate@hotmail.com",
-      subject: "Hello",
-      text: name,
-    };
-
-    client.messages
-      .create(DOMAIN, messageData)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.error(err);
-      }); */
+  const submitForm = async () => {
+    if (!validEmail.test(email)) {
+      setEmailErr(true);
+      return;
+    }
+    if (!validNumber.test(number)) {
+      setNumberErr(true);
+      return;
+    }
+    if (number.length > 11 || number.length < 10) {
+      setNumberErr(true);
+      return;
+    }
 
     console.log(name, number, email, textMessage);
     if (name === "" || number === "" || email === "" || textMessage === "") {
@@ -70,6 +70,8 @@ const ContactForm = () => {
       setMessage("");
       setEmail("");
       setTextMessage("");
+      setNumberErr(false);
+      setEmailErr(false);
     }
   };
 
@@ -99,7 +101,12 @@ const ContactForm = () => {
             setMessage(e.target.value);
           }}
         />
-        <label htmlFor="TelephoneNumber">Telefon nummer</label>
+        <label htmlFor="TelephoneNumber">
+          Telefon nummer 10 siffror Ex: 070 490 75 89.
+        </label>
+        {numberErr && (
+          <p className="form__warning">* Skriv in ett giltigt telefon nummer</p>
+        )}
         <input
           required
           value={number}
@@ -112,6 +119,9 @@ const ContactForm = () => {
           }}
         />
         <label htmlFor="EmailAdress">Email adress</label>
+        {emailErr && (
+          <p className="form__warning"> * Email adress stämmer inte</p>
+        )}
         <input
           onChange={(e) => {
             setEmail(e.target.value);
@@ -137,36 +147,21 @@ const ContactForm = () => {
           }}
         />
 
-        <button type="submit" onClick={mailgun} className="form__button">
+        <button type="submit" onClick={submitForm} className="form__button">
           Skicka
         </button>
       </form>
-      {showSentForm ? (
-        <article className="form__sent">
-          <p>Medelande skickat</p>
-          <button
-            className="form__sentButton"
-            onClick={() => {
-              setShowSentForm(false);
-            }}
-          >
-            Okej
-          </button>
-        </article>
-      ) : null}
-      {backbuttonWarning ? (
-        <article>
-          <p>Säkert att du vill byta sida?</p>
-          <button
-            onClick={() => {
-              setBackButtonWarning(false);
-            }}
-          >
-            Ja
-          </button>
-          <button>Nej</button>
-        </article>
-      ) : null}
+
+      {blocker.state === "blocked" ? <MyModal blocker={blocker} /> : null}
+
+      {showSentForm &&
+        createPortal(
+          <Modal
+            setShowSentForm={setShowSentForm}
+            setFormHasChange={setFormHasChange}
+          />,
+          document.body
+        )}
     </section>
   );
 };
