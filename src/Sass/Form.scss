@@ -9,43 +9,66 @@
   margin: 0.5rem;
   position: relative;
   font-size: 1rem;
+  z-index: 0;
+
+  &__warning {
+    color: red;
+    font-weight: 600;
+  }
 
   &__form {
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
   }
+
   &__input {
     margin-bottom: 1rem;
     padding: 1rem;
   }
+
   &__input::-webkit-outer-spin-button,
   &__input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
+
   &__button {
     @include button;
     background-color: $buttonLink;
     width: 100%;
     font-size: 1.4rem;
+    padding: 1rem;
   }
+
+  &__button:hover {
+    font-weight: 600;
+    background-color: $specialfont;
+  }
+
   &__sent {
-    right: 50%;
-    top: 50%;
+    box-sizing: border-box;
+    z-index: 6;
+    top: 1rem;
     position: fixed;
     background-color: $footer;
     padding: 1rem;
     color: $specialfont;
+    font-size: 1.5rem;
     border-radius: 3px;
+    width: 70%;
   }
+
   &__sentButton {
     @include button;
     width: 100%;
     color: black;
     font-weight: 600;
     font-size: 1rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
   }
+
   &__sentButton:hover {
     background-color: grey;
   }

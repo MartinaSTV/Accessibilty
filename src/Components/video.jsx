@@ -9,9 +9,9 @@ const Video = () => {
         <source src={massagevid} type="video/mp4" />
         <track
           kind="captions"
-          src="../Captions.vtt"
+          src=/* "../Captions.vtt"  */ "/captions.vtt"
           srcLang="en"
-          label="English"
+          label="Svenska"
           default
         ></track>
       </video>

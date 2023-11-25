@@ -13,4 +13,24 @@
     margin-right: 0.5rem;
     margin-left: 0.5rem;
   }
+  &__navburger {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .contact {
+    &__footer {
+      display: none;
+    }
+    &__navbar {
+      display: none;
+    }
+
+    &__navburger {
+      position: fixed;
+      bottom: 0;
+      display: block;
+      width: 100%;
+    }
+  }
 }
